@@ -1,4 +1,8 @@
 import app from './app'
+import dotenv from 'dotenv'
+dotenv.config()
+
+const PORT = process.env.PORT
 
 // iniciar o servidor
-app.app.listen(3333, () => console.log("running in door 3333"))
+app.listen(PORT, () => console.log("running in door 3333"))
