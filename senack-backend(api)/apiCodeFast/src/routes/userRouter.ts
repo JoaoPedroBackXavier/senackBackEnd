@@ -1,17 +1,13 @@
 const express = require('express')
 
-const fs = require('fs');
-
-const data: string = "./dataBase.json"
+import userController from "../controller/userController"
 
 const router = express.Router()
 
 // listar
-router.get('/users', (req: any, res: any) => {
-    const jsonData = fs.readFileSync(data)
-    res.send(JSON.parse(jsonData))
-})
+router.get('/users', userController.listUsers)
 
+/*
 // cadastrar usuarios
 router.post('/users', (req: any, res: any) =>
 {
@@ -57,5 +53,5 @@ router.delete('/user/:id', (req: any, res: any) => {
     fs.writeFileSync(data, values)
     res.send(`user witch id ${userId} has ben deleted`)
 })
-
+*/
 export default router
